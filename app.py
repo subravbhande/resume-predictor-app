@@ -1,6 +1,3 @@
-# 📦 Required installations
-# pip install streamlit scikit-learn python-docx PyPDF2
-
 import streamlit as st
 import pickle
 import PyPDF2
@@ -121,8 +118,8 @@ def main():
         ])
 
         st.markdown("---")
-        st.markdown("📌 Project by: [Subrav](https://github.com/yourusername)")
-        st.markdown("📁 [GitHub Repo](https://github.com/yourproject)")
+        st.markdown("📌 Project by: [Subrav bhande](https://github.com/subravbhande)")
+        st.markdown("📁 [GitHub Repo](https://github.com/subravbhande/resume-predictor-app)")
         st.markdown("<center>Made with ❤️ for you</center>", unsafe_allow_html=True)
 
         # Feedback last
@@ -187,7 +184,6 @@ def main():
                 for tip in tips:
                     st.markdown(f"- {tip}")
 
-                # Record analytics
                 st.session_state.resume_data.append({
                     'category': category,
                     'score': score,
@@ -197,7 +193,6 @@ def main():
             except Exception as e:
                 st.error(f"❌ Error: {e}")
 
-    # Section: Analytics Dashboard
     elif menu_option == "Analytics Dashboard":
         st.subheader("📊 Resume Analytics Dashboard")
         data = st.session_state.resume_data
@@ -222,17 +217,63 @@ def main():
         else:
             st.info("Upload at least one resume to see analytics.")
 
-    # Placeholder: Career Booster Toolkit
     elif menu_option == "Career Booster Toolkit":
         st.subheader("🚀 Career Booster Toolkit")
-        st.markdown("Here you'll find tips and resources to help you grow your career.")
-        st.markdown("- 📘 Learn new skills: [Coursera](https://coursera.org), [edX](https://edx.org), [Udemy](https://udemy.com)")
-        st.markdown("- 🛠 Build projects for your resume")
-        st.markdown("- 🤖 Contribute to open source on [GitHub](https://github.com/explore)")
-        st.markdown("- 💼 Prepare for interviews using [InterviewBit](https://www.interviewbit.com/)")
-        st.markdown("- ✨ Network on [LinkedIn](https://linkedin.com)")
+        st.markdown("Comprehensive resources to boost your career growth, learning, and visibility.")
 
-    # Placeholder: Multi-language support
+        with st.expander("🎓 Skill Development Platforms"):
+            st.markdown("- [Coursera](https://coursera.org)")
+            st.markdown("- [edX](https://edx.org)")
+            st.markdown("- [Udemy](https://udemy.com)")
+            st.markdown("- [freeCodeCamp](https://www.freecodecamp.org/)")
+            st.markdown("- [Kaggle Learn](https://www.kaggle.com/learn)")
+
+        with st.expander("💼 Resume & Portfolio Builders"):
+            st.markdown("- [Canva Resume Builder](https://www.canva.com/resumes/)")
+            st.markdown("- [Novoresume](https://novoresume.com/)")
+            st.markdown("- [Zety](https://zety.com/resume-builder)")
+            st.markdown("- [GitHub Portfolio Guide](https://github.com/emmabostian/developer-portfolios)")
+            st.markdown("- [Notion Portfolio Template](https://www.notion.so)")
+
+        with st.expander("🧠 Mock Interviews & Practice"):
+            st.markdown("- [InterviewBit](https://www.interviewbit.com/)")
+            st.markdown("- [Pramp](https://www.pramp.com/)")
+            st.markdown("- [Exercism](https://exercism.io/)")
+            st.markdown("- [GeeksforGeeks Practice](https://practice.geeksforgeeks.org/)")
+
+        with st.expander("🗂️ Contribute to Open Source"):
+            st.markdown("- [First Contributions](https://firstcontributions.github.io/)")
+            st.markdown("- [Up-for-Grabs](https://up-for-grabs.net/)")
+            st.markdown("- [CodeTriage](https://www.codetriage.com/)")
+            st.markdown("- [EddieHub](https://github.com/EddieHubCommunity)")
+
+        with st.expander("🌐 Build Your Network"):
+            st.markdown("- [LinkedIn](https://linkedin.com)")
+            st.markdown("- [AngelList](https://angel.co/)")
+            st.markdown("- [Twitter - Dev Community](https://twitter.com/search?q=developer)")
+            st.markdown("- [Polywork](https://www.polywork.com/)")
+
+        with st.expander("📈 Trending Tech & Career Insights"):
+            st.markdown("- [Stack Overflow Survey](https://insights.stackoverflow.com/survey)")
+            st.markdown("- [GitHub Octoverse](https://octoverse.github.com/)")
+            st.markdown("- [TechRadar](https://www.techradar.com/)")
+            st.markdown("- [Google Trends](https://trends.google.com/)")
+
+        with st.expander("🤖 AI-Powered Career Advice Tools"):
+            st.markdown("- [ChatGPT](https://chat.openai.com)")
+            st.markdown("- [Jasper.ai](https://www.jasper.ai/)")
+            st.markdown("- [Kickresume](https://www.kickresume.com/)")
+            st.markdown("- [Resume Worded](https://www.resumeworded.com/)")
+
+        with st.expander("📆 Productivity & Planning Tools"):
+            st.markdown("- [Notion](https://www.notion.so)")
+            st.markdown("- [Trello](https://trello.com/)")
+            st.markdown("- [Pomofocus](https://pomofocus.io/)")
+            st.markdown("- [Todoist](https://todoist.com/)")
+
+        st.markdown("---")
+        st.info("💡 Tip: Bookmark this toolkit or export it to Notion/Google Keep to use daily.")
+
     elif menu_option == "Multi-language Support (Coming Soon)":
         st.subheader("🌐 Multi-language Support")
         st.markdown("This feature is coming soon! You'll be able to select and analyze resumes in different languages.")
